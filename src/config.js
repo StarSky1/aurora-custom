@@ -23,7 +23,6 @@ export default {
   username: 'starsky1', // github 用户名
   repository: 'blog', // 文章仓库地址
   // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
-
   token: ['820579cd781ec55399510', 'c62568d4cbabe628b0f'],
 
   /**
@@ -94,7 +93,7 @@ export default {
   bookOpts: {
     display: true,
     enableComment: true,
-    qoute: '吾生有涯，而知无涯'
+    qoute: '吾生也有涯，而知也无涯'
   },
 
   /**

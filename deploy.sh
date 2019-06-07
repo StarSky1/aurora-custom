@@ -10,13 +10,21 @@ npm run build
 cd dist
 
 # 部署到自定义域名，没有自定义域名可注释掉
+<<<<<<< HEAD
 echo 'hexo.yangjing.cc' > CNAME
+=======
+echo 'chanshiyu.com' > CNAME
+>>>>>>> ce64f51e384134fe4e04f3e6893888d355be9a73
 
 git init
 git add -A
 git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io
+<<<<<<< HEAD
 git push -f git@github.com:StarSky1/starsky1.github.io.git master
+=======
+git push -f git@github.com:chanshiyucx/chanshiyucx.github.io.git master
+>>>>>>> ce64f51e384134fe4e04f3e6893888d355be9a73
 
 cd -
