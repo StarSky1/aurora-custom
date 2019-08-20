@@ -6,7 +6,6 @@
     .post-header {
       position: relative;
       overflow: hidden;
-      margin-bottom: 0.16rem;
       &:hover {
         .wrapper {
           transform: scale(1.05);
@@ -73,7 +72,7 @@
     }
 
     .post-body {
-      padding-bottom: 0.16rem;
+      padding: 0.16rem 0;
       line-height: 1.6;
       font-size: 0.16rem;
       text-align: justify;
@@ -214,6 +213,12 @@
       }
 
       span[class*='img-box'] {
+        display: block;
+        margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+
         img {
           margin: 0 auto;
           max-width: 100%;
@@ -232,7 +237,7 @@
         }
         span {
           display: block;
-          padding-top: 4px;
+          padding-top: 5px;
           font-style: italic;
           text-align: center;
         }
@@ -243,25 +248,25 @@
         }
       }
 
-      .markdown > table {
-        margin: 0 auto 0.16rem;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 3px;
-        border-collapse: separate;
-        border-spacing: 0;
-        tr {
-          height: 0.32rem;
-        }
-        tr:nth-child(2n),
-        thead > tr {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
-        td,
-        th {
-          padding: 0 0.36rem;
-          border-right: 1px solid rgba(0, 0, 0, 0.1);
-          &:last-child {
-            border-right: none;
+      .table-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
+        & > table {
+          margin: 0 auto 0.16rem;
+          border-radius: 3px;
+          border-collapse: separate;
+          border-spacing: 2px;
+          border: 1px solid #dfdfdf;
+          tr {
+            height: 0.32rem;
+          }
+          th {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          td,
+          th {
+            padding: 0 0.36rem;
+            border: 1px solid #dfdfdf;
           }
         }
       }
