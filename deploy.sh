@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 # 部署到自定义域名，没有自定义域名可注释掉
-echo 'hexo.yangjing.cc' > CNAME
+echo 'hexo.starsky1.cn' > CNAME
 
 
 git init

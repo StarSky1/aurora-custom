@@ -28,6 +28,7 @@
         <a rel="noopener noreferrer" target="_blank" href="https://github.com/chanshiyucx/aurora">Aurora</a> |
         {{ $config.subtitle }}
       </p>
+      <p>备案号: <a rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备19020430号</a></p>
     </div>
     <div v-if="!$isMobile" class="sakura cursor" @click="dropPanel" @mouseenter="handleHover('panel')">
       <img :src="sakura" alt="theme" />
