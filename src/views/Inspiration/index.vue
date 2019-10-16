@@ -34,7 +34,7 @@ import Comment from '@/components/Comment'
 import { shuffle } from '@/utils'
 
 export default {
-  name: 'Inspiration',
+  name: 'inspiration',
   components: {
     MarkDown,
     Loading,
@@ -53,7 +53,7 @@ export default {
       pageSize: 10,
       inspiration: [],
       list: [],
-      delayTime: this.$config.isMobile ? 500 : 0 + 1000
+      delayTime: this.$config.isMobile ? 400 : 0 + 1000
     }
   },
   computed: {

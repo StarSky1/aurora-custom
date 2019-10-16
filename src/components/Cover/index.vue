@@ -1,17 +1,7 @@
 <template>
   <div class="wrapper">
     <img :src="defaultCover" alt="defaultCover" />
-    <div v-if="!disabledAnimate" class="cover">
-      <Transition name="cover-transform" mode="out-in">
-        <img v-if="imgSrc" :key="imgSrc" :src="imgSrc" :alt="alt" />
-      </Transition>
-    </div>
-    <div class="mask" :style="{ height: maskHeight }">
-      <img :src="defaultCover" alt="defaultCover" />
-      <Transition v-if="!disabledAnimate" name="cover-transform" mode="out-in">
-        <img v-if="imgSrc" :key="imgSrc" :src="imgSrc" :alt="alt" />
-      </Transition>
-    </div>
+    <img class="cover fadeIn" v-show="imgSrc" :src="imgSrc" :alt="alt" />
   </div>
 </template>
 
@@ -34,17 +24,11 @@ export default {
     loadCover: {
       type: Boolean,
       default: false
-    },
-    isLoad: {
-      type: Boolean,
-      default: false
     }
   },
   data() {
-    const disabledAnimate = this.isLoad
     return {
-      defaultCover: disabledAnimate ? this.src : this.$config.defaultCover,
-      disabledAnimate,
+      defaultCover: this.$config.defaultCover,
       imgSrc: ''
     }
   },
@@ -52,7 +36,9 @@ export default {
     loadCover: {
       immediate: true,
       handler(val) {
-        if (val && !this.disabledAnimate) this.loadImg()
+        if (val) {
+          this.loadImg()
+        }
       }
     }
   },
@@ -61,37 +47,31 @@ export default {
       const img = new Image()
       img.onload = () => {
         this.imgSrc = this.src
-        this.$emit('loadNextCover')
+        this.$emit('loadNext')
       }
       img.src = this.src
     }
   }
 }
 </script>
+
 <style lang="less" scoped>
 .wrapper {
   position: relative;
-  transition: transform 0.6s ease-out;
+  transition: all 0.6s ease;
+
   img {
     width: 100%;
   }
+
   .cover {
     position: absolute;
     top: 0;
     left: 0;
   }
-  .mask {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    filter: blur(3px);
-    img {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
+
+  .fadeIn {
+    animation: coverDown 0.5s ease-out;
   }
 }
 </style>

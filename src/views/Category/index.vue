@@ -4,7 +4,7 @@
       <div class="card" v-if="category.length">
         <Quote :quote="$config.categoryOpts.qoute" />
         <ul class="category">
-          <li class="card" v-for="item in category" :key="item.id" @click="handleFilter(item)">
+          <li class="card cursor" v-for="item in category" :key="item.id" @click="handleFilter(item)">
             <img class="bg" :src="item.cover" alt />
             <div class="meta">
               <div>
@@ -49,7 +49,7 @@ import ArchiveCard from '@/components/Archive'
 import Comment from '@/components/Comment'
 
 export default {
-  name: 'Category',
+  name: 'category',
   components: {
     Loading,
     Quote,

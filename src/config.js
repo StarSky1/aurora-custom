@@ -1,15 +1,15 @@
 /**
  * Aurora 主题配置文件
  * 食用指南：https://github.com/chanshiyucx/blog/issues/41
- * 联系作者：Blog https://chanshiyu.com     QQ 1124590931
+ * 联系作者：Blog https://chanshiyu.com      QQ 1124590931
  */
 
 export default {
   /**
-   * ==================================================
-   *                 站点功能【必需】
-   * ==================================================
-   **/
+   * =========================================================
+   *                      站点功能【必需】
+   * =========================================================
+   */
 
   /**
    * 站点标题
@@ -46,9 +46,9 @@ export default {
   },
 
   /**
-   * ====================================================
-   *                     页面设置
-   * ====================================================
+   * =========================================================
+   *                        页面设置
+   * =========================================================
    */
 
   /**
@@ -57,7 +57,7 @@ export default {
   archiveOpts: {
     display: true, // 是否显示该页面
     enableComment: false, // 是否开启评论功能
-    qoute: '文章千古事，得失寸心知' // 页面顶部一言
+    qoute: '華枝春滿 天心月圓' // 页面顶部一言
   },
 
   /**
@@ -66,7 +66,7 @@ export default {
   categoryOpts: {
     display: true,
     enableComment: false,
-    qoute: '华枝春满，天心月圆'
+    qoute: '桜華月想 暮色蒼然'
   },
 
   /**
@@ -75,7 +75,7 @@ export default {
   tagOpts: {
     display: true,
     enableComment: false,
-    qoute: '列卒周匝，星罗云布'
+    qoute: '灯笼流丽，百鬼夜行'
   },
 
   /**
@@ -84,7 +84,7 @@ export default {
   inspirationOpts: {
     display: true,
     enableComment: true,
-    qoute: '欲言又止，止言又欲'
+    qoute: '詠奏妖華，明鏡止水'
   },
 
   /**
@@ -93,7 +93,7 @@ export default {
   bookOpts: {
     display: true,
     enableComment: true,
-    qoute: '吾生也有涯，而知也无涯'
+    qoute: '追想風景 彼岸帰航'
   },
 
   /**
@@ -112,34 +112,34 @@ export default {
     display: true,
     enableComment: true,
     qoute: '仰望星空与脚踏实地',
-    avatar: 'https://i.loli.net/2019/06/06/5cf92ee6867a325115.jpg',
+    avatar: require('./assets/images/avatar.jpg'),
     graduated: '湖北第二师范学院（湖北 武汉 光谷）',
     college: '计算机学院（软件工程）',
     // 联系方式，可自由添加
     contact: [
       {
-        icon: 'https://i.loli.net/2019/01/25/5c4b2a7558ad7.png',
+        icon: require('./assets/images/email.png'),
         link: 'mailto:763559353@qq.com'
       },
       {
-        icon: 'https://i.loli.net/2019/01/25/5c4b2982b5687.png',
+        icon: require('./assets/images/github.png'),
         link: 'https://github.com/starsky1'
       },
       {
-        icon: 'https://i.loli.net/2019/06/06/5cf930802f2bd99485.png',
+        icon: require('./assets/images/csdn.png'),
         link: 'https://blog.csdn.net/yang15071409747'
       },
       {
-        icon: 'https://i.loli.net/2019/06/06/5cf932bdef8e561476.png',
+        icon: require('./assets/images/weibo.png'),
         link: 'https://weibo.com/5490697038/profile'
       }
     ]
   },
 
   /**
-   * ======================================================
-   *                      主题自定义
-   * ======================================================
+   * =========================================================
+   *                         主题自定义
+   * =========================================================
    */
 
   /**
@@ -148,23 +148,23 @@ export default {
   qrcode: [
     {
       name: '支付宝',
-      img: 'https://i.loli.net/2019/06/07/5cf938fc37c2b92675.png'
+      img: require('./assets/images/zhifubao.png')
     },
     {
       name: '微信',
-      img: 'https://i.loli.net/2019/06/07/5cf938fd3e37091049.png'
+      img: require('./assets/images/weixin.png')
     }
   ],
 
   /**
    * 加载动画
    */
-  loadingImg: 'https://i.loli.net/2018/12/15/5c14be28964d2.gif',
+  loadingImg: require('./assets/images/loading.gif'),
 
   /**
    * 文章默认图
    */
-  defaultCover: 'https://i.loli.net/2019/01/24/5c49bd8dad2f5.jpg',
+  defaultCover: require('./assets/images/defaultCover.jpg'),
 
   /**
    * 音乐播放器,
@@ -174,31 +174,31 @@ export default {
       name: 'うたかたの风と蝉时雨',
       artist: 'Little Planet',
       url: 'https://files.catbox.moe/wo7zjt.mp3',
-      cover: 'https://i.loli.net/2018/12/09/5c0cc3ca1081b.jpg'
+      cover: require('./assets/images/cover1.jpg')
     },
     {
       name: '春の凑に',
       artist: 'TUMENECO',
       url: 'https://files.catbox.moe/ducy49.mp3',
-      cover: 'https://i.loli.net/2018/12/11/5c0f196d01a3a.jpg'
+      cover: require('./assets/images/cover2.jpg')
     },
     {
       name: '夏阳炎',
       artist: '天威梦方',
       url: 'https://files.catbox.moe/7migen.mp3',
-      cover: 'https://i.loli.net/2018/12/09/5c0cc3cee372a.jpg'
+      cover: require('./assets/images/cover3.jpg')
     },
     {
       name: '秋风のとおり道',
       artist: '风神华伝',
       url: 'https://files.catbox.moe/b58fq6.mp3',
-      cover: 'https://i.loli.net/2018/12/09/5c0cc3d13844a.jpg'
+      cover: require('./assets/images/cover4.jpg')
     },
     {
       name: '冬のわすれもの',
       artist: 'ハルノカゼ',
       url: 'https://files.catbox.moe/vwnawp.mp3',
-      cover: 'https://i.loli.net/2018/12/09/5c0cc3d36349c.jpg'
+      cover: require('./assets/images/cover5.jpg')
     }
   ],
 

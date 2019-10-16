@@ -7,7 +7,7 @@ import config from '../config'
  */
 const regex = /^(.+)?\r\n\s*(.+)?\r\n/
 const coverRegex = /^\[(.+)\].*(http.*(?:jpg|jpeg|png|gif))/
-export const formatPost = (post, index) => {
+export const formatPost = post => {
   const { body, created_at } = post
   const result = regex.exec(body)
   const cover = coverRegex.exec(result[1])
@@ -15,7 +15,6 @@ export const formatPost = (post, index) => {
     title: cover[1] || 'defaultCover',
     src: cover[2] || config.defaultCover
   }
-  post.loadCover = index < 4
   post.description = result[2]
   post.created_at = format(created_at, 'zh_CN')
   return post
@@ -45,7 +44,7 @@ export const formatInspiration = inspiration => {
  * 格式化书单 & 友链 & 关于
  */
 export const formatPage = (data, type) => {
-  if (!data.body) return
+  if (!data || !data.body) return []
   let section = data.body.split('## ').filter(o => o.length)
 
   switch (type) {

@@ -27,7 +27,7 @@ import ArchiveCard from '@/components/Archive'
 import Comment from '@/components/Comment'
 
 export default {
-  name: 'Archive',
+  name: 'archive',
   components: {
     Loading,
     Quote,
@@ -39,11 +39,11 @@ export default {
       loading: false,
       initComment: false,
       page: 0,
-      pageSize: 12,
+      pageSize: 10,
       posts: [],
       list: [],
       times: {},
-      delayTime: this.$config.isMobile ? 500 : 0 + 800
+      delayTime: this.$config.isMobile ? 400 : 0 + 600
     }
   },
   computed: {

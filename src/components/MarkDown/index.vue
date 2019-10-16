@@ -4,7 +4,13 @@
 
 <script>
 import marked from 'marked'
+import Zooming from 'zooming'
 import hljs from '@/assets/lib/highlight'
+
+const zooming = new Zooming({
+  bgOpacity: 0,
+  zIndex: 100
+})
 
 const renderer = new marked.Renderer()
 
@@ -14,7 +20,7 @@ renderer.heading = function(text, level, raw, slugger) {
 }
 
 renderer.image = function(href, title, text) {
-  return `<span class="img-box" data-src="${href}" data-sub-html="<h4>${text}</h4>"><img src="${href}" loading="lazy" alt="${text}" />${
+  return `<span class="img-box cursor"><img class="img-zoomable" src="${href}" loading="lazy" alt="${text}" />${
     text ? `<span>◭ ${text}</span>` : ''
   }</span>`
 }
@@ -52,7 +58,8 @@ export default {
   },
   data() {
     return {
-      html: ''
+      html: '',
+      lg: ''
     }
   },
   created() {
@@ -68,26 +75,15 @@ export default {
       this.html = marked(this.content)
 
       // 对于只是纯解析文字不需要代码高亮和灯箱
-      if (this.target) {
-        this.$nextTick(() => {
-          // 代码行数
-          hljs.initLineNumbersOnLoad({ target: this.target })
-          // 灯箱
-          window.lightGallery(document.querySelector(this.target), {
-            selector: '.img-box',
-            thumbMargin: 6,
-            download: false,
-            subHtmlSelectorRelative: true
-          })
-        })
-      }
+      if (!this.target) return
+      this.$nextTick(() => {
+        hljs.initLineNumbersOnLoad({ target: this.target })
+        zooming.listen('.img-zoomable')
+      })
     }
   },
   beforeDestroy() {
-    Object.keys(window.lgData).forEach(k => {
-      window.lgData[k].destroy && window.lgData[k].destroy(true)
-    })
-    window.lgData = {}
+    zooming.close()
   }
 }
 </script>
