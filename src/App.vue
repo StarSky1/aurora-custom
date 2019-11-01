@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <vue-progress-bar></vue-progress-bar>
-    <Header />
-    <div class="page">
+    <Transition name="header-transform" mode="out-in">
+      <Header v-show="showHeader" />
+    </Transition>
+    <main class="main">
       <Transition name="fade-transform" mode="out-in">
         <keep-alive :exclude="['post']" :max="10">
           <RouterView />
         </keep-alive>
       </Transition>
-    </div>
+    </main>
     <Footer @dropPanel="showPanel = true" />
-    <Panel v-show="showPanel" @hidePanel="showPanel = false" />
+    <Panel :showPanel="showPanel" @hidePanel="showPanel = false" />
     <ScrollTop />
   </div>
 </template>
@@ -32,18 +34,39 @@ export default {
   },
   data() {
     return {
+      showHeader: true,
       showPanel: false
     }
   },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(val) {
+        if (this.$isMobile) {
+          this.showHeader = val && val.name !== 'post'
+        }
+        if (val.name === 'post') {
+          setTimeout(() => {
+            this.scrollTop()
+          }, 500)
+        }
+      }
+    }
+  },
   created() {
-    document.title = this.$config.title
+    this.initSite()
+    this.initProgress()
     this.visitorStatistics()
-    if (!this.$isMobile) this.initProgress()
   },
   mounted() {
-    if (!this.$isMobile) this.$Progress.finish()
+    this.$Progress.finish()
   },
   methods: {
+    // 初始化站点信息
+    initSite() {
+      const { title, subtitle } = this.$config
+      document.title = `${title} | ${subtitle}`
+    },
     // 注册顶部进度条
     initProgress() {
       this.$Progress.start()
@@ -60,21 +83,28 @@ export default {
       const referrer = getLocation(document.referrer)
       const hostname = referrer.hostname || '直接访问'
       this.$store.dispatch('visitorStatistics', hostname)
+    },
+    // 滚动到顶部
+    scrollTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
 }
 </script>
 
-<style lang="less" scope>
+<style lang="scss" scope>
 #app {
   position: relative;
-  padding-bottom: 1rem;
-  text-align: center;
+  @include pc-layout {
+    padding-bottom: 100px;
+  }
+  @include sp-layout {
+    padding-bottom: 60px;
+  }
 
-  .page {
+  .main {
     margin: 0 auto;
-    padding: 0 0.12rem;
-    max-width: 900px;
+    max-width: $page-desktop;
     user-select: text;
   }
 }

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import AV from 'leancloud-storage'
 import isMobile from 'ismobilejs'
-import FontFaceObserver from 'fontfaceobserver'
 import VueProgressBar from 'vue-progressbar'
 import APlayer from '@moefe/vue-aplayer'
 
@@ -14,9 +13,8 @@ import config from './config'
 // Layout and Font
 import 'aos/dist/aos.css'
 import 'gitalk/dist/gitalk.css'
-import './assets/font/fontello.less'
-import './assets/style/animation.less'
-import './assets/style/layout.less'
+import '@/assets/font/fontello.scss'
+import '@/styles/index.scss'
 
 // Global variable
 Vue.config.productionTip = false
@@ -25,11 +23,11 @@ Vue.prototype.$isMobile = isMobile().phone
 
 // Init Progress Bar
 const options = {
-  color: '#986DB2',
+  color: '#d68fe9',
   thickness: '4px',
   transition: {
     speed: '0.2s',
-    opacity: '0.6s',
+    opacity: '0.5s',
     termination: 300
   },
   autoRevert: true,
@@ -45,9 +43,9 @@ Vue.use(APlayer, { productionTip: false })
 window.AV = AV
 AV.init(config.leancloud)
 
-// Init Font
-const font = new FontFaceObserver('Noto Serif SC', { weight: '400' })
-font.load().then(() => document.documentElement.classList.add('fonts-loaded'))
+// Init Image
+const img = new Image()
+img.src = config.defaultCover
 
 new Vue({
   router,
@@ -58,7 +56,7 @@ new Vue({
 // (o=^•ェ•)o
 const labelStyle = 'color:#FFF;line-height:22px;background:#D68FE9;'
 const siteUrl = 'https://github.com/chanshiyucx/aurora'
-const bg = 'https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/reimu.png'
+const bg = 'https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/reimu.png'
 console.info(`%c ${config.title} %c`, `${labelStyle}`, '', window.location.origin)
 console.info('%c Theme %c', `${labelStyle}`, '', siteUrl)
 console.info('~❀~ 发现控制台报错请务必联系博主 ~❀~')

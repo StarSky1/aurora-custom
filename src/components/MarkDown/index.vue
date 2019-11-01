@@ -8,11 +8,13 @@ import Zooming from 'zooming'
 import hljs from '@/assets/lib/highlight'
 
 const zooming = new Zooming({
-  bgOpacity: 0,
+  bgOpacity: 0.6,
   zIndex: 100
 })
 
 const renderer = new marked.Renderer()
+
+let loadingId = 1
 
 renderer.heading = function(text, level, raw, slugger) {
   const icon = ['gift', 'pagelines', 'pilcrow'][level - 2]
@@ -20,7 +22,21 @@ renderer.heading = function(text, level, raw, slugger) {
 }
 
 renderer.image = function(href, title, text) {
-  return `<span class="img-box cursor"><img class="img-zoomable" src="${href}" loading="lazy" alt="${text}" />${
+  const id = `loading-${loadingId}`
+  loadingId++
+
+  const img = new Image()
+  img.src = href
+  img.onload = () => {
+    const dom = document.getElementById(id)
+    dom.style.display = 'none'
+  }
+
+  return `<span class="img-box">
+  <span id="${id}" class="loading">
+    <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  </span>
+  <img class="img-zoomable cursor" src="${href}" loading="lazy" alt="${text}" />${
     text ? `<span>◭ ${text}</span>` : ''
   }</span>`
 }
@@ -87,3 +103,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scope>
+@import './index.scss';
+</style>

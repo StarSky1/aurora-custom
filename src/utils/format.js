@@ -16,7 +16,7 @@ export const formatPost = post => {
     src: cover[2] || config.defaultCover
   }
   post.description = result[2]
-  post.created_at = format(created_at, 'zh_CN')
+  post.created_at = format(created_at, 'zh_CN').replace(/\s/, '')
   return post
 }
 
@@ -87,5 +87,12 @@ export const formatPage = (data, type) => {
     default:
       break
   }
+  // 移除首尾空格
+  section.forEach(item => {
+    Object.keys(item).forEach(k => {
+      item[k] = item[k].trim()
+    })
+  })
+
   return section
 }

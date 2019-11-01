@@ -17,10 +17,6 @@ export default {
       type: String,
       default: ''
     },
-    maskHeight: {
-      type: String,
-      default: '.5rem'
-    },
     loadCover: {
       type: Boolean,
       default: false
@@ -55,14 +51,9 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .wrapper {
   position: relative;
-  transition: all 0.6s ease;
-
-  img {
-    width: 100%;
-  }
 
   .cover {
     position: absolute;
@@ -71,7 +62,7 @@ export default {
   }
 
   .fadeIn {
-    animation: coverDown 0.5s ease-out;
+    animation: coverDown 0.4s ease-out;
   }
 }
 </style>

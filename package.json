@@ -1,6 +1,6 @@
 {
   "name": "aurora",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "An awesome blog theme",
   "author": "蝉時雨 <me@chanshiyu.com>",
   "license": "MIT",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@moefe/vue-aplayer": "^2.0.0-beta.5",
     "aos": "^3.0.0-beta.6",
-    "fontfaceobserver": "^2.1.0",
+    "core-js": "^3.3.3",
     "gitalk": "^1.5.0",
     "highlight.js": "^9.15.10",
     "ismobilejs": "^1.0.3",
@@ -27,16 +27,19 @@
     "zooming": "^2.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-router": "^4.0.0",
+    "@vue/cli-plugin-vuex": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
     "@vue/eslint-config-prettier": "^5.0.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.4.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-vue": "^5.2.3",
-    "less": "^3.10.2",
-    "less-loader": "^5.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.5.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   }
 }

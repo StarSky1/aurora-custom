@@ -17,7 +17,7 @@ export default {
       topDistance: -950,
       clientHeight: 0,
       scrollTimer: '',
-      lastScroll: new Date()
+      lastScrollAt: new Date()
     }
   },
   computed: {
@@ -38,8 +38,8 @@ export default {
     // 监听页面滚动
     handleScroll() {
       const now = new Date()
-      if (now - this.lastScroll <= 150) return
-      this.lastScroll = now
+      if (now - this.lastScrollAt <= 150) return
+      this.lastScrollAt = now
       this.handleTop()
 
       clearTimeout(this.scrollTimer)
@@ -56,9 +56,9 @@ export default {
       // 判断位置，控制滚动到顶部
       const showBackTop = pageYOffset >= 200
       if (showBackTop !== this.showBackTop || this.clientHeight !== clientHeight) {
-        // 1.5s 后启用动画
+        // 1s 后启用动画
         this.lock = true
-        setTimeout(() => (this.lock = !showBackTop), 1500)
+        setTimeout(() => (this.lock = !showBackTop), 1000)
 
         this.topDistance = -950 + (showBackTop ? clientHeight : 0)
         this.clientHeight = clientHeight
@@ -69,6 +69,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-@import './index.less';
+<style lang="scss" scoped>
+@import './index.scss';
 </style>
