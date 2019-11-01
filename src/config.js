@@ -118,11 +118,11 @@ export default {
     // 联系方式，可自由添加
     contact: [
       {
-        icon: require('./assets/images/email.png'),
+        icon: require('./assets/images/email2.png'),
         link: 'mailto:763559353@qq.com'
       },
       {
-        icon: require('./assets/images/github.png'),
+        icon: require('./assets/images/github2.png'),
         link: 'https://github.com/starsky1'
       },
       {
