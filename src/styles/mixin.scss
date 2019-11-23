@@ -38,11 +38,11 @@
 }
 
 @mixin cursor {
-  cursor: url('../assets/cursor/cursor.png'), auto;
+  cursor: url('../assets/cursor/cursor.png'), auto !important;
 }
 
 @mixin cursor-link {
-  cursor: url('../assets/cursor/cursor_link.png'), auto;
+  cursor: url('../assets/cursor/cursor_link.png'), auto !important;
 }
 
 @mixin clip {
@@ -85,7 +85,7 @@
 @mixin card-page {
   border-radius: 3px;
   @include pc-layout {
-    background-color: $bg-white-deep;
+    background-color: $bg-white-dim;
     box-shadow: $card-shadow-base;
   }
 }
