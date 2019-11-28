@@ -112,25 +112,25 @@ export default {
     display: true,
     enableComment: true,
     qoute: '仰望星空与脚踏实地',
-    avatar: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/avatar.jpg'),
+    avatar: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/avatar.jpg',
     graduated: '湖北第二师范学院（湖北 武汉 光谷）',
     college: '计算机学院（软件工程）',
     // 联系方式，可自由添加
     contact: [
       {
-        icon: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/email.png'),
+        icon: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/email.png',
         link: 'mailto:763559353@qq.com'
       },
       {
-        icon: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/github.png'),
+        icon: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/github.png',
         link: 'https://github.com/starsky1'
       },
       {
-        icon: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/csdn.png'),
+        icon: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/csdn.png',
         link: 'https://blog.csdn.net/yang15071409747'
       },
       {
-        icon: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/weibo.png'),
+        icon: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/weibo.png',
         link: 'https://weibo.com/5490697038/profile'
       }
     ]
@@ -148,11 +148,11 @@ export default {
   qrcode: [
     {
       name: '支付宝',
-      img: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/zhifubao.png')
+      img: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/zhifubao.png'
     },
     {
       name: '微信',
-      img: require('//cdn.jsdelivr.net/gh/starsky1/poi/2019/weixin.png')
+      img: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/weixin.png'
     }
   ],
 
