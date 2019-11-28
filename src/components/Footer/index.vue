@@ -37,7 +37,7 @@
         |
         {{ $config.subtitle }}
       </p>
-      <p>备案号: <a rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备19020430号</a></p>
+      <!-- <p>备案号: <a rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备19020430号</a></p> -->
     </div>
     <img
       v-if="!$isMobile"
