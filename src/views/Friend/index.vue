@@ -5,10 +5,10 @@
         <Quote :quote="$config.friendOpts.qoute" />
         <div class="me">
           <span>欢迎各位大佬交换友链 (づ￣ 3￣)づ</span>
-          <span>★ Bio：蝉时雨</span>
-          <span>★ Motto：蝉鸣如雨，花宵道中</span>
+          <span>★ Bio：望下星空</span>
+          <span>★ Motto：仰望星空，脚踏实地</span>
           <span>★ URL：https://chanshiyu.com</span>
-          <span>★ Avatar：<a href="https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/avatar.jpg" target="_blank">点击获取</a></span>
+          <span>★ Avatar：<a href="https://cdn.jsdelivr.net/gh/starsky1/poi/2019/avatar.jpg" target="_blank">点击获取</a></span>
           <span>※ 以下友链按博主互访次数排序，并根据个人对博客内容喜好加权，博主将不定期更新排序并过滤阵亡名单。</span>
         </div>
         <ul class="content">
