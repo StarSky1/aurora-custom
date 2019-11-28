@@ -1,5 +1,6 @@
 module.exports = {
   productionSourceMap: false,
+  publicPath: '/',
   chainWebpack(config) {
     const cdn = {
       css: ['//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&display=swap'],
