@@ -8,7 +8,13 @@
       <div class="tool">
         <div class="menu" v-if="showWaifu">
           <ul>
-            <li class="cursor" v-for="item in menu" :key="item.type" @click="handleClick(item.type)" @mouseenter="handleHover(item.type)">
+            <li
+              class="cursor"
+              v-for="item in menu"
+              :key="item.type"
+              @click="handleClick(item.type)"
+              @mouseenter="handleHover(item.type)"
+            >
               <i :class="['icon', `icon-${item.icon}`]"></i>
             </li>
           </ul>
@@ -33,7 +39,14 @@
       </p>
       <!-- <p>备案号: <a rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备19020430号</a></p> -->
     </div>
-    <img v-if="!$isMobile" class="sakura cursor" :src="sakura" @click="dropPanel" @mouseenter="handleHover('panel')" alt="sakura" />
+    <img
+      v-if="!$isMobile"
+      class="sakura cursor"
+      :src="sakura"
+      @click="dropPanel"
+      @mouseenter="handleHover('panel')"
+      alt="sakura"
+    />
   </footer>
 </template>
 
@@ -115,7 +128,9 @@ export default {
     handleHover(type) {
       let tips
       if (type === 'switch') {
-        tips = `要召唤<span style="color: #b854d4">${this.waifu === 'pio' ? ' 欧内酱 Tia ' : ' 一抹多 Pio '} </span>么(◍˃̶ᗜ˂̶◍)✩`
+        tips = `要召唤<span style="color: #b854d4">${
+          this.waifu === 'pio' ? ' 欧内酱 Tia ' : ' 一抹多 Pio '
+        } </span>么(◍˃̶ᗜ˂̶◍)✩`
       } else {
         tips = hoverTips[type]
       }
