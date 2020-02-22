@@ -14,11 +14,11 @@
     background-color: $purple-dark;
     background-image: -webkit-linear-gradient(
       45deg,
-      rgba(255, 255, 255, 0.4) 25%,
+      $bg-white 25%,
       transparent 25%,
       transparent 50%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.4) 75%,
+      $bg-white 50%,
+      $bg-white 75%,
       transparent 75%,
       transparent
     );
@@ -66,6 +66,28 @@
       transform-origin: bottom left;
       transform: scaleX(1);
     }
+
+    &::before {
+      opacity: 1;
+      transform: scale(1) translateY(-100%);
+    }
+  }
+
+  &:before {
+    content: '\e809  'attr(href);
+    position: absolute;
+    padding: 0px 4px;
+    width: max-content;
+    pointer-events: none;
+    font-family: 'Fontello';
+    font-size: $font-size-small;
+    box-shadow: $card-shadow-light;
+    border-radius: 3px;
+    background-color: white;
+    opacity: 0;
+    transform: scale(0.7) translateY(-75%);
+    transform-origin: left center;
+    transition: all 0.3s ease 0s;
   }
 }
 

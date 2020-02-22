@@ -11,7 +11,7 @@ import { fileCDN, handleImg } from '@/utils'
 let IMGID = 0
 
 const zooming = new Zooming({
-  bgOpacity: 0.6,
+  bgOpacity: 0.8,
   zIndex: 100
 })
 
@@ -37,7 +37,7 @@ renderer.image = function(href, title, text) {
 
   const { style, isFull } = handleImg(href)
 
-  return `<span class="img-box ${isFull ? 'full' : ''}" >
+  return `<span class="img-box ${isFull ? 'full' : ''}">
   <span class="bg" style="${style}">
     <span class="loading">
       <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -46,13 +46,6 @@ renderer.image = function(href, title, text) {
   <img id="${id}" class="img-zoomable cursor" style="${style}"  loading="lazy" alt="${text}" />${
     text ? `<span class="title">◭ ${text}</span>` : ''
   }</span>`
-}
-
-renderer.link = function(href, title, text) {
-  if (text.includes('icon')) {
-    return `<a href="${href}" target="_blank">${text}</a>`
-  }
-  return `<a href="${href}" target="_blank"><i class="icon icon-link"></i>${text}</a>`
 }
 
 // Table 包裹元素，使之可以横向滚动

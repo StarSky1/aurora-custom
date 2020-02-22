@@ -18,15 +18,19 @@ export default {
   subtitle: '仰望星空与脚踏实地',
 
   /**
-   * Github Issues 配置【文章、说说、书单、友链】
+   * Github Issues 配置
    */
   username: 'starsky1', // github 用户名
   repository: 'blog', // 文章仓库地址
+<<<<<<< HEAD
   // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
   token: ['820579cd781ec55399510', 'c62568d4cbabe628b0f'],
+=======
+  token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'], // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
+>>>>>>> eea4c3d0e809d79b4cdd528a03d1b168565f17cf
 
   /**
-   * Gitalk 配置【评论功能】，详细文档参见：https://github.com/gitalk/gitalk
+   * Gitalk 配置，文档详见：https://github.com/gitalk/gitalk
    */
   gitalk: {
     clientID: '0d27cf2345ebc471ecc3',
@@ -38,7 +42,7 @@ export default {
   },
 
   /**
-   * leancloud 配置 【文章浏览次数】
+   * leancloud 配置 【注意切换为国际版】
    */
   leancloud: {
     appId: 'eCGeNb9O3Ma6sWwDfsVOOilf-MdYXbMMI',
@@ -61,7 +65,7 @@ export default {
   },
 
   /**
-   * 分类页面【与 Github Issues 的 Milestone 对应】
+   * 分类页面
    */
   categoryOpts: {
     display: true,
@@ -111,11 +115,18 @@ export default {
   aboutOpts: {
     display: true,
     enableComment: true,
+<<<<<<< HEAD
     qoute: '仰望星空与脚踏实地',
     avatar: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/avatar.jpg',
     graduated: '湖北第二师范学院（湖北 武汉 光谷）',
     college: '计算机学院（软件工程）',
     // 联系方式，可自由添加
+=======
+    qoute: '蝉鸣如雨，花宵道中',
+    avatar: '//cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/avatar.jpg',
+    graduated: 'University of Electronic Science and Technology of China (UESTC)',
+    college: 'Communication&Information Engineering',
+>>>>>>> eea4c3d0e809d79b4cdd528a03d1b168565f17cf
     contact: [
       {
         icon: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/email.png',
@@ -143,6 +154,16 @@ export default {
    */
 
   /**
+   * 加载动画
+   */
+  loadingImg: '//cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/loading.gif',
+
+  /**
+   * 文章默认图
+   */
+  defaultCover: '//cdn.jsdelivr.net/gh/chanshiyucx/yoi/bg/defaultCover.jpg',
+
+  /**
    * 赛钱箱
    */
   qrcode: [
@@ -157,6 +178,7 @@ export default {
   ],
 
   /**
+<<<<<<< HEAD
    * 加载动画
    */
   loadingImg: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/loading.gif',
@@ -167,6 +189,8 @@ export default {
   defaultCover: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/defaultCover.jpg',
 
   /**
+=======
+>>>>>>> eea4c3d0e809d79b4cdd528a03d1b168565f17cf
    * 音乐播放器,
    */
   APlayer: [
@@ -203,8 +227,8 @@ export default {
   ],
 
   /**
-   * 主题配色，目前主要用于文章、说说、关于等卡片配色，以后可能会有其他用途
-   * 推荐一个好看的取色站，日本の伝統色：http://nipponcolors.com/
+   * 主题配色，主要用于文章、灵感、关于等卡片配色
+   * 推荐一个超棒的取色站，日本の伝統色：http://nipponcolors.com/
    */
   themeColors: [
     '#B28FCE', // 薄
