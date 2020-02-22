@@ -22,12 +22,8 @@ export default {
    */
   username: 'starsky1', // github 用户名
   repository: 'blog', // 文章仓库地址
-<<<<<<< HEAD
   // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
   token: ['820579cd781ec55399510', 'c62568d4cbabe628b0f'],
-=======
-  token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'], // token 从中间任意位置拆开成两部分，避免 github 代码检测失效
->>>>>>> eea4c3d0e809d79b4cdd528a03d1b168565f17cf
 
   /**
    * Gitalk 配置，文档详见：https://github.com/gitalk/gitalk
@@ -115,18 +111,11 @@ export default {
   aboutOpts: {
     display: true,
     enableComment: true,
-<<<<<<< HEAD
     qoute: '仰望星空与脚踏实地',
     avatar: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/avatar.jpg',
     graduated: '湖北第二师范学院（湖北 武汉 光谷）',
     college: '计算机学院（软件工程）',
     // 联系方式，可自由添加
-=======
-    qoute: '蝉鸣如雨，花宵道中',
-    avatar: '//cdn.jsdelivr.net/gh/chanshiyucx/yoi/blog/avatar.jpg',
-    graduated: 'University of Electronic Science and Technology of China (UESTC)',
-    college: 'Communication&Information Engineering',
->>>>>>> eea4c3d0e809d79b4cdd528a03d1b168565f17cf
     contact: [
       {
         icon: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/email.png',
@@ -178,7 +167,6 @@ export default {
   ],
 
   /**
-<<<<<<< HEAD
    * 加载动画
    */
   loadingImg: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/loading.gif',
@@ -189,8 +177,6 @@ export default {
   defaultCover: '//cdn.jsdelivr.net/gh/starsky1/poi/2019/defaultCover.jpg',
 
   /**
-=======
->>>>>>> eea4c3d0e809d79b4cdd528a03d1b168565f17cf
    * 音乐播放器,
    */
   APlayer: [
