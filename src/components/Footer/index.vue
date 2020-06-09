@@ -1,6 +1,6 @@
 <template>
   <footer id="footer">
-    <div class="prpr" v-if="!$isMobile">
+    <div class="prpr" v-if="!$isMobile.value">
       <div v-if="showWaifu" class="waifu">
         <div v-show="tips && isMini" :class="['tips', this.waifu === 'tia' && 'tia']" v-html="tips"></div>
         <canvas @click="handleClickWaifu" id="live2d" width="280" height="250" />
@@ -40,7 +40,7 @@
       <!-- <p>备案号: <a rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/" target="_blank">鄂ICP备19020430号</a></p> -->
     </div>
     <img
-      v-if="!$isMobile"
+      v-if="!$isMobile.value"
       class="sakura cursor"
       :src="sakura"
       @click="dropPanel"
@@ -75,18 +75,18 @@ export default {
         { icon: 't-shirt', type: 'dressup' },
         { icon: 'camera', type: 'takephoto' },
         { icon: 'comment', type: 'talk' },
-        { icon: 'cancel-outline', type: 'close' }
+        { icon: 'cancel-outline', type: 'close' },
       ],
       audio: this.$config.APlayer,
-      isMini: true
+      isMini: true,
     }
   },
   computed: mapState({
-    tips: state => state.tips,
-    tipsUpdateAt: state => state.tipsUpdateAt
+    tips: (state) => state.tips,
+    tipsUpdateAt: (state) => state.tipsUpdateAt,
   }),
   mounted() {
-    if (!this.$isMobile) {
+    if (!this.$isMobile.value) {
       this.dressup()
       this.loopTips()
     }
@@ -172,8 +172,8 @@ export default {
     },
     dropPanel() {
       this.$emit('dropPanel')
-    }
-  }
+    },
+  },
 }
 </script>
 

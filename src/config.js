@@ -57,7 +57,7 @@ export default {
   archiveOpts: {
     display: true, // 是否显示该页面
     enableComment: false, // 是否开启评论功能
-    qoute: '華枝春滿 天心月圓' // 页面顶部一言
+    qoute: '華枝春滿 天心月圓', // 页面顶部一言
   },
 
   /**
@@ -66,7 +66,7 @@ export default {
   categoryOpts: {
     display: true,
     enableComment: false,
-    qoute: '桜華月想 暮色蒼然'
+    qoute: '桜華月想 暮色蒼然',
   },
 
   /**
@@ -75,7 +75,7 @@ export default {
   tagOpts: {
     display: true,
     enableComment: false,
-    qoute: '灯笼流丽，百鬼夜行'
+    qoute: '灯笼流丽，百鬼夜行',
   },
 
   /**
@@ -84,7 +84,7 @@ export default {
   inspirationOpts: {
     display: true,
     enableComment: true,
-    qoute: '詠奏妖華，明鏡止水'
+    qoute: '詠奏妖華，明鏡止水',
   },
 
   /**
@@ -93,7 +93,7 @@ export default {
   bookOpts: {
     display: true,
     enableComment: true,
-    qoute: '追想風景 彼岸帰航'
+    qoute: '追想風景 彼岸帰航',
   },
 
   /**
@@ -102,7 +102,7 @@ export default {
   friendOpts: {
     display: true,
     enableComment: true,
-    qoute: '青青子衿，悠悠我心'
+    qoute: '青青子衿，悠悠我心',
   },
 
   /**
@@ -228,6 +228,6 @@ export default {
     '#FB966E', // 洗朱
     '#BC9F77', // 白茶
     '#867835', // 黄海松茶
-    '#B9887D' // 水がき
-  ]
+    '#B9887D', // 水がき
+  ],
 }

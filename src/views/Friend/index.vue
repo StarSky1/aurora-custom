@@ -43,18 +43,18 @@ import Quote from '@/components/Quote'
 import Comment from '@/components/Comment'
 
 export default {
-  name: 'friend',
+  name: 'Friend',
   components: {
     Loading,
     Cover,
     Quote,
-    Comment
+    Comment,
   },
   data() {
     return {
       friend: [],
       initComment: false,
-      LOAD_INX: 4
+      LOAD_INX: 4,
     }
   },
   async created() {
@@ -67,8 +67,8 @@ export default {
     },
     loadNext() {
       this.LOAD_INX += 1
-    }
-  }
+    },
+  },
 }
 </script>
 

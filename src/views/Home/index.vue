@@ -67,12 +67,12 @@ import Pagination from '@/components/Pagination'
 import Cover from '@/components/Cover'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     MarkDown,
     Loading,
     Pagination,
-    Cover
+    Cover,
   },
   data() {
     return {
@@ -82,12 +82,12 @@ export default {
       posts: [],
       list: [],
       times: {},
-      LOAD_INX: 4
+      LOAD_INX: 4,
     }
   },
   computed: {
     ...mapState({
-      totalCount: state => state.totalCount
+      totalCount: (state) => state.totalCount,
     }),
     maxPage() {
       return Math.ceil(this.totalCount / this.pageSize)
@@ -97,7 +97,7 @@ export default {
     },
     isDisabledNext() {
       return this.page >= this.maxPage
-    }
+    },
   },
   async created() {
     if (!this.totalCount) {
@@ -109,7 +109,7 @@ export default {
       duration: 2000,
       easing: 'ease',
       debounceDelay: 200,
-      offset: 50
+      offset: 50,
     })
   },
   methods: {
@@ -130,7 +130,7 @@ export default {
       this.loading = true
       const posts = await this.$store.dispatch('queryPosts', {
         page: queryPage,
-        pageSize: this.pageSize
+        pageSize: this.pageSize,
       })
       this.loading = false
 
@@ -141,7 +141,7 @@ export default {
 
       // 获取文章热度
       this.$nextTick(async () => {
-        const ids = posts.map(o => o.id)
+        const ids = posts.map((o) => o.id)
         const hot = await this.$store.dispatch('queryHot', { ids })
         this.times = { ...this.times, ...hot }
       })
@@ -149,7 +149,7 @@ export default {
     // 滚动到顶部
     scrollTop(cb) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
-      const delayTime = this.$isMobile ? 400 : 0
+      const delayTime = this.$isMobile.value ? 400 : 0
       setTimeout(cb, 800 + delayTime)
       setTimeout(AOS.refresh, 1200 + delayTime)
     },
@@ -165,8 +165,8 @@ export default {
     showTips(post) {
       const tips = `要去看看<span style="color: #b854d4"> ${post.title} </span>吗？`
       this.$store.dispatch('showTips', { tips })
-    }
-  }
+    },
+  },
 }
 </script>
 
