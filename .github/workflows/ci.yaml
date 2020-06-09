@@ -30,7 +30,7 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          repo: starsky1.github.io
+          repo: StarSky1/starsky1.github.io
           target_branch: master
           build_dir: dist
         env:
