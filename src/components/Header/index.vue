@@ -1,5 +1,5 @@
 <template>
-  <header id="header">
+  <header>
     <RouterLink class="title" to="/">{{ $config.title }}</RouterLink>
     <span class="subtitle">{{ $config.subtitle }}</span>
     <nav>
